@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photo Editor</title>
+    <style>
+        button#done {
+            font-size: 200%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <img id='image' width="100%" src="file:///var/mobile/Media/PhotoData/CPLAssets/group76/F58ED02F-5EE7-4ACE-95BA-832E0CC74DC2.JPG" />
+    <button id='done'>Done</button>
+    <script>
+       // const url = new URL(window.location.href)
+       // const params = new URLSearchParams(window.location.search)
+       // const imageId = params.get('imageId')
+
+    // function to load image file passed by native code.
+    function loadImage(imageSource) {
+        image.src = imageSource;
+       }
+    
+        done.onclick = function () {
+            try {
+                     webkit.messageHandlers.callbackHandler.postMessage("done button clicked");
+                 } catch(err) {
+                     console.log('The native context does not exist yet');
+                 }
+        };
+    </script>
+</body>
+</html>
