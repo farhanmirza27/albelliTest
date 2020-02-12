@@ -27,5 +27,5 @@ class  DetailsPresenter  : ViewToPresenterDetailsProtocol {
 
 // handle functions by Interactor
 extension DetailsPresenter : InteractorToPresenterDetailsProtocol {
- 
+    
 }

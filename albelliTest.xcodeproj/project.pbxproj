@@ -81,12 +81,11 @@
 		4365213B23C5D9D600E97E12 /* albelliTest */ = {
 			isa = PBXGroup;
 			children = (
-				A97C5FC623EEB91900F7B78E /* testPage.html */,
+				A958A1F523F3E51B00920ED0 /* web */,
+				A958A1F423F3E50D00920ED0 /* app-settings */,
 				A98BCB7B23EE1B8E00E84C5F /* app-managers */,
 				A98BCB6623EE167200E84C5F /* app-module */,
 				A98BCB6523EE166A00E84C5F /* helpers */,
-				4365213C23C5D9D600E97E12 /* AppDelegate.swift */,
-				4365215823C6227900E97E12 /* CollectionViewImageCell.swift */,
 				4365214523C5D9DF00E97E12 /* Assets.xcassets */,
 				4365214723C5D9DF00E97E12 /* LaunchScreen.storyboard */,
 				4365214A23C5D9DF00E97E12 /* Info.plist */,
@@ -152,6 +151,30 @@
 				A9116E7023F2B63A000F742D /* DetailsProtocols.swift */,
 			);
 			path = protocols;
+			sourceTree = "<group>";
+		};
+		A958A1F423F3E50D00920ED0 /* app-settings */ = {
+			isa = PBXGroup;
+			children = (
+				4365213C23C5D9D600E97E12 /* AppDelegate.swift */,
+			);
+			path = "app-settings";
+			sourceTree = "<group>";
+		};
+		A958A1F523F3E51B00920ED0 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				A97C5FC623EEB91900F7B78E /* testPage.html */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+		A958A1F623F3E53300920ED0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				4365215823C6227900E97E12 /* CollectionViewImageCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		A98BCB6523EE166A00E84C5F /* helpers */ = {
@@ -221,6 +244,7 @@
 		A98BCB6C23EE16B300E84C5F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A958A1F623F3E53300920ED0 /* cell */,
 				4365214023C5D9D600E97E12 /* MainViewController.swift */,
 			);
 			path = view;

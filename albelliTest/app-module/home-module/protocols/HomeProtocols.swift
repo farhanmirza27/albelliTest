@@ -17,12 +17,12 @@ protocol ViewToPresenterHomeProtocol: class{
     var router: PresenterToRouterHomeProtocol? {get set}
     func requestPhotos()
     func showDetailView(imageId : String , navigationController : UINavigationController)
-
+    
 }
 
 protocol PresenterToViewHomeProtocol: class {
     func displayPictures(photos : [PHAsset])
-     func showError()
+    func showError()
 }
 
 protocol PresenterToRouterHomeProtocol: class {

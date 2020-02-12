@@ -9,27 +9,27 @@
 import UIKit
 
 class DetailsRouter : PresenterToRouterDetailsProtocol {
-  
+    
     static func createModule(imageId : String) -> ImageViewController {
         let view =  ImageViewController(imageId: imageId)
-                let presenter: ViewToPresenterDetailsProtocol & InteractorToPresenterDetailsProtocol = DetailsPresenter()
-                let interactor: PresenterToInteractorDetailsProtocol = DetailsInteractor()
-                let router:PresenterToRouterDetailsProtocol = DetailsRouter()
-                
-                view.presenter = presenter
-                presenter.view = view
-                presenter.router = router
-                presenter.interactor = interactor
-                interactor.presenter = presenter
-                return view
-                
+        let presenter: ViewToPresenterDetailsProtocol & InteractorToPresenterDetailsProtocol = DetailsPresenter()
+        let interactor: PresenterToInteractorDetailsProtocol = DetailsInteractor()
+        let router:PresenterToRouterDetailsProtocol = DetailsRouter()
+        
+        view.presenter = presenter
+        presenter.view = view
+        presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        return view
+        
     }
     
-     func navigateToHomeView(navigationController: UINavigationController) {
+    func navigateToHomeView(navigationController: UINavigationController) {
         navigationController.popViewController(animated: true)
-      }
-      
-     
-
-           
+    }
+    
+    
+    
+    
 }

@@ -18,7 +18,7 @@ protocol ViewToPresenterDetailsProtocol: class{
 
 
 protocol PresenterToViewDetailsProtocol: class {
-     func showError()
+    func showError()
 }
 
 protocol PresenterToRouterDetailsProtocol: class {
@@ -32,5 +32,5 @@ protocol PresenterToInteractorDetailsProtocol: class {
 }
 
 protocol InteractorToPresenterDetailsProtocol: class {
-   //
+    //
 }

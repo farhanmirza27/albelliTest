@@ -39,9 +39,9 @@ class MainViewController: UIViewController {
         // Register cell class
         collectionView.register(CollectionViewImageCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         view.addSubview(collectionView)
-
+        
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getAllPhotos()
@@ -68,18 +68,18 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             ) as! CollectionViewImageCell
         
         
-       // images passed with PHImageManager
+        // images passed with PHImageManager
         PHImageManager.default().requestImage(for:  photos[indexPath.row], targetSize: CGSize(width: 300, height: 300), contentMode: .aspectFit, options: nil) {  image, info in
-               guard let info = info else { return }
-               let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
-               if !isDegradedImage {
-                   if let image = image {
+            guard let info = info else { return }
+            let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
+            if !isDegradedImage {
+                if let image = image {
                     cell.image = image
-                   }
-               }
-           }
+                }
+            }
+        }
         return cell
-
+        
     }
     
     

@@ -12,7 +12,7 @@ import Photos
 
 // handle functions by View
 class  HomePresenter  : ViewToPresenterHomeProtocol {
-
+    
     var view: PresenterToViewHomeProtocol?
     
     var interactor: PresenterToInteractorHomeProtocol?
@@ -39,5 +39,5 @@ extension HomePresenter : InteractorToPresenterHomeProtocol {
         view?.showError()
     }
     
- 
+    
 }

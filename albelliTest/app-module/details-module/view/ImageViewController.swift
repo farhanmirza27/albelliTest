@@ -15,43 +15,43 @@ class ImageViewController: UIViewController {
     private var webView: WKWebView!
     
     var presenter: ViewToPresenterDetailsProtocol?
-
+    
     init(imageId: String) {
         self.imageId = imageId
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-    let contentController = WKUserContentController();
-
+        let contentController = WKUserContentController();
+        
         contentController.add(
             self,
             name: "callbackHandler"
         )
-
-      let config = WKWebViewConfiguration()
+        
+        let config = WKWebViewConfiguration()
         config.userContentController = contentController
         webView = WKWebView(frame: view.bounds, configuration:  config)
         webView.navigationDelegate = self
         view.addSubview(webView)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadPage()
     }
-
     
-   private func loadPage() {
-    let url = Bundle.main.url(forResource: "testPage", withExtension: "html")!
-    webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+    
+    private func loadPage() {
+        let url = Bundle.main.url(forResource: "testPage", withExtension: "html")!
+        webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
     }
     
 }
@@ -68,15 +68,15 @@ extension ImageViewController : WKScriptMessageHandler, WKNavigationDelegate {
     
     // function to call javascript function to load image file
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-       webView.evaluateJavaScript("loadImage(\"\(imageId)\")", completionHandler: nil)
+        webView.evaluateJavaScript("loadImage(\"\(imageId)\")", completionHandler: nil)
     }
     
 }
 
 extension ImageViewController : PresenterToViewDetailsProtocol {
     func showError() {
-    // handle error if any comes up..
-    self.alert(message: "something went wrong.")
+        // handle error if any comes up..
+        self.alert(message: "something went wrong.")
     }
-        
+    
 }

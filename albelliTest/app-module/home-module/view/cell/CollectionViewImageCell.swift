@@ -15,18 +15,18 @@ class CollectionViewImageCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         return imageView
     }()
-
+    
     var image: UIImage? { didSet { imageView.image = image } }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setup() {
         imageView.translatesAutoresizingMaskIntoConstraints = true
         imageView.frame = bounds

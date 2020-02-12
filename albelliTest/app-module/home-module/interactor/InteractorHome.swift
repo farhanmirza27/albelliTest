@@ -19,8 +19,9 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
             self.presenter?.fetchPicturesSuccess(photos: result)
         }) { error in
             print(error.localizedDescription)
+            self.presenter?.fetchPicturesListFailed()
         }
-
+        
     }
     
 }
